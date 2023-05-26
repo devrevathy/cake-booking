@@ -1,0 +1,190 @@
+
+
+
+
+
+<iframe width="560" height="315" src=".video\static\videos\pexels-taryn-elliott-3326577-1920x1080-24fps.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+
+
+
+
+{%load static%}
+<html lang="en">
+<head>
+	<title>Login V18</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body style="background-color: #666666;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" method="post">
+					{% csrf_token %}
+					<span class="login100-form-title p-b-43">
+						Login to continue
+					</span>
+													
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Email</span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass">
+						{% comment %} <span class="focus-input100"></span> {% endcomment %}
+						<span class="label-input100">Password</span>
+					</div>
+
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+						<div>
+							<a href="/Registration" class="txt1">
+								Dont have an account Register here!
+							</a>
+						</div>
+					</div>
+			
+                  <p style:"color:red">{{ msg }}</p>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Login
+						</button>
+					</div>
+					
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+							
+						</span>
+					</div> 
+
+				  <div class="login100-form-social flex-c-m">
+						{% comment %} <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5"> {% endcomment %}
+							{% comment %} <i class="fa fa-facebook-f" aria-hidden="true"></i> {% endcomment %}
+						</a>
+
+						{% comment %} <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5"> {% endcomment %}
+							{% comment %} <i class="fa fa-twitter" aria-hidden="true"></i> {% endcomment %}
+						</a>
+					</div>
+				</form>
+
+				<div class="login100-more" style="background-image: url('static/login/images/bg-01.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+	
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'login/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'login/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/js/main.js' %}"></script>
+
+</body>
+</html>
+
+
+
+cart  html 
+ 
+<div class="rating">
+	<input type="radio" id="star5" name="rate" value="5">
+	<label for="star5" title="text"></label>
+	<input type="radio" id="star4" name="rate" value="4">
+	<label for="star4" title="text"></label>
+	<input checked="" type="radio" id="star3" name="rate" value="3">
+	<label for="star3" title="text"></label>
+	<input type="radio" id="star2" name="rate" value="2">
+	<label for="star2" title="text"></label>
+	<input type="radio" id="star1" name="rate" value="1">
+	<label for="star1" title="text"></label>
+  </div>
+
+  cart css
+
+  .rating:not(:checked) > input {
+	position: absolute;
+	appearance: none;
+  }
+  
+  .rating:not(:checked) > label {
+	float: right;
+	cursor: pointer;
+	font-size: 50px;
+	color: #666;
+  }
+  
+  .rating:not(:checked) > label:before {
+	content: '★';
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+	color: #e58e09;
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+	color: #ff9e0b;
+  }
+  
+  .rating > input:checked ~ label {
+	color: #ffa723;
+  }
+  
+  
+  <div class="form-item form-type-textfield form-item-product-attribute-16"><label class="input_label_heading">Name on Cake</label><input type="text" class="mini-personalized-text-attribute personalized-text form-text ui-body-inherit ui-corner-all" placeholder="Write name here" maxlength="20" autocomplete="off" id="edit-product-attribute-16" size="60" value=""><div class="description"><span class="personalized-text-desc">Maximum limit :- <!-- -->20<!-- --> characters</span></div></div>
+
+  

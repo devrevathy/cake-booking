@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DEVAS- HOME MADE CAKES</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{%static './img/favicon.ico ' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{%static '/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{%static 'css/style.css'%}" rel="stylesheet">
+
+    
+    
+</head>
+<style>
+    .card {
+        position: relative;
+        width: 14.875em;
+        height: 20.5em;
+        box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: all 120ms;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        padding: 0.5em;
+        padding-bottom: 3.4em;
+      }
+      
+       {% comment %} .card::after {
+        content: "";
+        padding-top: 1.40em;
+        padding-left: 5.25em;
+        position: absolute;
+        left: 0;
+        bottom: -60px;
+        background: #00AC7C;
+        color: #fff;
+        height: 2.8em;
+        width: 90%;
+        transition: all 80ms;
+        font-weight: 600;
+        text-transform: uppercase;
+        opacity: 0; 
+      }
+       {% endcomment %}
+      .card .title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.9em;
+        position: absolute;
+        left: 0.625em;
+        bottom: 1.875em;
+        font-weight: 400;
+        color: #000;
+      }
+      
+      .card .price {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 0.9em;
+        position: absolute;
+        left: 0.625em;
+        bottom: 0.625em;
+        color: #000;
+      }
+      
+      .card:hover::after {
+        bottom: 0;
+        opacity: 1;
+      }
+      
+      .card:active {
+        transform: scale(0.98);
+      }
+      
+      .card:active::after {
+        content: "";
+        height: 4.125em;
+      }
+      
+      .text {
+        max-width: 55px;
+      }
+      
+      .image {
+        background: rgb(241, 241, 241);
+        width: 400%;
+        height: 400%;
+        display: grid; 
+        place-items: center;
+      }
+      /* Carousel styles */
+      .carousel {
+          position: relative;
+      }
+      
+      .carousel-inner {
+          position: relative;
+          width: 100%;
+          height: 400px; /* Adjust the height as needed */
+      }
+      
+      .carousel-item {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+
+ </style>   
+<body>
+ 
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid px-0 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-4 text-center bg-secondary py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    {% comment %} <i class="bi bi-envelope fs-1 text-primary me-3"></i> {% endcomment %}
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1">Email Us</h6>
+                        <span>devashomemadecakes@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center bg-primary border-inner py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>THE Devas</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center bg-secondary py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    {% comment %} <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i> {% endcomment %}
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1">Call Us</h6>
+                        <span>+91 9947767844</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+    <a href="index.html" class="navbar-brand d-block d-lg-none">
+        <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>DEVAS</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto mx-lg-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About Us</a>
+            <a href="cakedetails.html" class="nav-item nav-link active">Cakes & Pricing</a>
+            
+
+            <a href="contact" class="nav-item nav-link">Contact Us</a>
+            <a href="login" class="nav-item nav-link">Login</a>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+
+
+
+    {% comment %} <!-- About Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+                <h2 class="text-primary font-secondary">Cake and Pricing</h2>
+                <h1 class="display-4 text-uppercase">Welcome To Devas</h1>
+            </div>
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="{% static 'img/about.jpg' %}" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 pb-5">
+                    <h4 class="mb-4">Devas is a homely made cakeshop </h4>
+                    <p class="mb-5">Our cakes are purely homemade and healthy.</p>
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
+                                <i class="fa fa-heartbeat fa-2x text-white"></i>
+                            </div>
+                            <h4 class="text-uppercase">100% Healthy</h4>
+                            <p class="mb-0">Customer statisfaction is one of the most important thing we focus.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
+                                <i class="fa fa-award fa-2x text-white"></i>
+                            </div>
+                            {% comment %} <h4 class="text-uppercase">Award Winning</h4> {% endcomment %}
+                            {% comment %} <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End --> 
+   <!-- Products Start -->
+   <!DOCTYPE html>
+   <html lang="en">
+   
+   <head>
+       <meta charset="utf-8">
+       <title>Search Cakes</title>
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   </head>
+   
+   <body>
+       <div class="container-fluid about py-5">
+           <div class="container">
+               <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+                   <h2 class="text-primary font-secondary">Menu, Recipe & Pricing</h2>
+                   <h1 class="display-4 text-uppercase">Explore Our Cakes</h1>
+               </div>
+               <div class="tab-content">
+                   <div id="tab-1" class="tab-pane fade show p-0 active">
+                       <div class="row g-3">
+                           <hr>
+                           <div class="container-fluid py-5">
+                               <div class="container">
+                                   <h1>Wedding</h1>
+                                   <br>
+                                   <div class="row g-5" id="weddingCakes">
+                                       {% for i in wedding %}
+                                       <div class="col-md-3">
+                                           <a href="cake_detail_page?id={{ i.id }}">
+                                               <div class="card">
+                                                   <img class="card-img-top" src="{{ i.pic.url }}" alt=""
+                                                       style="max-width: 100%; height: 200px;">
+                                                   <div class="card-body">
+                                                       <h5 class="card-title">{{ i.name }}</h5>
+                                                       <p class="card-text">&#8377;{{ i.price }}</p>
+                                                   </div>
+                                               </div>
+                                           </a>
+                                       </div>
+                                       {% endfor %}
+                                   </div>
+                               </div>
+                           </div>
+                           <h1>Birthday</h1>
+                           <div class="container-fluid py-5">
+                               <div class="container">
+                                   <div class="row" id="birthdayCakes">
+                                       {% for i in b %}
+                                       <div class="col-md-3">
+                                           <a href="cake_detail_page?id={{ i.id }}">
+                                               <div class="card">
+                                                   <img class="card-img-top" src="{{ i.pic.url }}" alt=""
+                                                       style="max-width: 100%; height: 200px;">
+                                                   <div class="card-body">
+                                                       <h5 class="card-title">{{ i.name }}</h5>
+                                                       <p class="card-text">&#8377;{{ i.price }}</p>
+                                                   </div>
+                                               </div>
+                                           </a>
+                                       </div>
+                                       {% endfor %}
+                                   </div>
+                                   <br>
+                                   <br>
+                                   <h1>Custom</h1>
+                                   <div class="row" id="customCakes">
+                                       <br>
+                                       <br>
+                                       {% for i in customs %}
+                                       <div class="col-md-3">
+                                           <a href="cake_detail_page?id={{ i.id }}">
+                                               <div class="card">
+                                                   <img class="card-img-top" src="{{ i.pic.url }}" alt=""
+                                                       style="max-width: 100%; height: 200px;">
+                                                   <div class="card-body">
+                                                       <h5 class="card-title">{{ i.name }}</h5>
+                                                       <p class="card-text">&#8377;{{ i.price }}</p>
+                                                   </div>
+                                               </div>
+                                           </a>
+                                       </div>
+                                       {% endfor %}
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <!-- Price details -->
+                           {% for x in items %}
+                           <div class="col-md-3 mt-5" data-aos="fade-up" data-aos-delay="100"
+                               style="border-right:1px solid black;">
+                               <div class="col">
+                                   <a style="color:black;"
+                                       href="product_page?id={{ x.id }}&cat_id={{ x.category.id }}">
+                                       <h5 class="pt-5"
+                                           style="font-size:30px;text-transform: capitalize;font-weight:400">{{ x.item_name }}</h5>
+                                   </a>
+                                   <p style="font-size:12px;text-transform: uppercase;">Category: {{ x.category }}</p>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star"></span>
+                                   <span class="fa fa-star"></span>
+                                   <span>4 ratings</span>
+                                   <br>
+                                   <s>&#8377; {{ x.item_rate }}</s>
+                                   <p style="font-weight:400;font-size:30px;color:black;">&#8377; {{ x.item_rate }}</p>
+                               </div>
+                               <a href="login">
+                                   <button class="btn btn-warning p-2" style="width:300px;height:50px;">Add to Cart
+                                       &nbsp;<i class='fas fa-shopping-cart'></i></button>
+                               </a>
+                           </div>
+                           {% endfor %}
+   
+                           <!-- Carousel for additional pictures -->
+   
+                           <div class="container">
+                               <h1>Additional Pictures</h1>
+                               <div id="carouselExample" class="carousel slide mt-5" data-bs-ride="carousel">
+                                   <div class="carousel-inner">
+                                       <div class="carousel-item active">
+                                           <img class="card-img-top" src="{{ i.pic.url }}" alt=""
+                                               style="max-width: 100%; height: 200px;">
+                                       </div>
+                                       <div class="carousel-item">
+                                           <img src="image2.jpg" class="d-block w-100" alt="Image 2">
+                                       </div>
+                                       <div class="carousel-item">
+                                           <img src="image3.jpg" class="d-block w-100" alt="Image 3">
+                                       </div>
+                                       <!-- Add more carousel items as needed -->
+                                   </div>
+                                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                       data-bs-slide="prev">
+                                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                       <span class="visually-hidden">Previous</span>
+                                   </button>
+                                   <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                                       data-bs-slide="next">
+                                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                       <span class="visually-hidden">Next</span>
+                                   </button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   
+       <script>
+           $(document).ready(function () {
+               $("#searchButton").click(function () {
+                   var searchQuery = $("#searchInput").val().toLowerCase();
+                   $(".card").each(function () {
+                       var cakeName = $(this).find(".card-title").text().toLowerCase();
+                       if (cakeName.indexOf(searchQuery) !== -1) {
+                           $(this).show();
+                       } else {
+                           $(this).hide();
+                       }
+                   });
+               });
+           });
+       </script>
+   </body>
+   
+   </html>
+   
+    </div>
+            
+    {% comment %} it ends here {% endcomment %}
+
+    <!-- Offer Start -->
+    <div class="container-fluid bg-offer my-5 py-5">
+        <div class="container py-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-7 text-center">
+                    <div class="section-title position-relative text-center mx-auto mb-4 pb-3" style="max-width: 600px;">
+                        <h2 class="text-primary font-secondary">Special Kombo Pack</h2>
+                        <h1 class="display-4 text-uppercase text-white">Super Crispy Cakes</h1>
+                    </div>
+                    {% comment %} <p class="text-white mb-4">Eirmod sed tempor lorem ut dolores sit kasd ipsum. Dolor ea et dolore et at sea ea at dolor justo ipsum duo rebum sea. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo lorem. Elitr ut dolores magna sit. Sea dolore sed et.</p> {% endcomment %}
+                    <a href="" class="btn btn-primary border-inner py-3 px-5 me-3">Shop Now</a>
+                    <a href="" class="btn btn-dark border-inner py-3 px-5">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Offer End -->
+
+
+   
+    
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-img text-secondary" style="margin-top: 90px">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 mb-lg-n5">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>Devas</h1>
+                        </a>
+                        <p class="mt-3">Eat.Love.Crave</p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Get In Touch</h4>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Vattappara P.O Thiruvanthapuram</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">devashomemadecakes@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+91 9656867844</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Quick Links</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>cakedetails</a>
+                                {% comment %} <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>/a> {% endcomment %}
+                                {% comment %} <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a> {% endcomment %}
+                                <a class="text-secondary" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                        {% comment %} <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Newsletter</h4>
+                            <p>Amet justo diam dolor rebum lorem sit stet sea justo kasd</p>
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                    <button class="btn btn-primary">Sign Up</button>
+                                </div>
+                            </form>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c py-4" style="background: #111111;">
+        <div class="container text-center">
+            <p class="mb-0">&copy; <a class="text-white border-bottom" href="#"> 
+			
+			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+			{% comment %} Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p> {% endcomment %}
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src=" https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{%static 'lib/easing/easing.min.js'%}"></script>
+    <script src="{%static 'lib/waypoints/waypoints.min.j'%}"></script>
+    <script src="{%static 'lib/counterup/counterup.min.js'%}"></script>
+    <script src="{%static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{%static 'js/main.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+
+</html>

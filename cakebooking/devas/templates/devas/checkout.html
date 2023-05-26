@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Page</title>
+
+  <!-- Load static files -->
+  {% load static %}
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  <style>
+    .form-control {
+      width: 350px;
+    }
+
+    .box-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+
+    .box-element {
+      background-color: #ECEFF1;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 450px;
+    }
+
+    .box-title {
+      color: #616161;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .box-submit {
+      margin-top: 20px;
+    }
+
+    .box-submit button {
+      background-color: #03A9F4;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .box-submit button:hover {
+      background-color: #039BE5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box-container">
+    <div class="box-element">
+      <div id="user-info">
+        <form action="checkout" method="POST" id="form">
+          {% csrf_token %}
+          <div class="box-title">Order Form</div>
+          <div class="form-group">
+            <label for="name"><strong>Name</strong></label>
+            <input required class="form-control" type="text" name="name" value="{{user.fname}}" placeholder="Name..">
+          </div>
+          <div class="form-group">
+            <label for="email"><strong>Email</strong></label>
+            <input required class="form-control" type="email" name="email" value="{{user.email}}" placeholder="Email..">
+          </div>
+
+          <div id="shipping-info">
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input class="form-control" type="text" name="address" value="{{user.address}}" placeholder="Address..">
+            </div>
+
+            <div class="form-group">
+              <label for="contact">Contact</label>
+              <input class="form-control" type="text" name="Contact" value="{{user.contact}}" placeholder="Contact..">
+            </div>
+
+            <div class="form-group">
+              <label for="pincode">Pin code</label>
+              <input class="form-control" type="text" name="pincode" value="{{user.pin}}" placeholder="Pin code..">
+            </div>
+
+            <div class="form-group">
+              <label for="total">Total</label>
+              <input class="form-control" type="text" name="total" value="{{cart.total}}">
+            </div>
+
+            <div class="box-submit">
+              <button type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

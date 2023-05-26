@@ -1,0 +1,117 @@
+{%load static%}
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<style>
+    @media (min-width: 1025px) {
+        .h-custom {
+        height: 100vh !important;
+        }
+        }
+</style>
+<section class="h-100 h-custom" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+  
+              <div class="row">
+  
+                <div class="col-lg-7">
+                 
+                  <h5 class="mb-3"><a href="/user_cake_details" class="text-body"><i
+                        class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
+                  <hr>
+  
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                      <p class="mb-1">Shopping cart</p>
+                      <p class="mb-0">Items in your cart</p>
+                    </div>
+                    <div>
+                      <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!"
+                          class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
+                    </div>
+                  </div>
+
+                {% for cp in cart.cartproduct_set.all %}
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                          <div>
+                            
+                             <img src="{{cp.cake.pic.url}}"
+                              class="img-fluid rounded-3"  alt="Shopping item" style="width: 300px;">
+
+                              
+
+                         {% for i in messages %}
+                         <strong style="color:red;font-size:10px;" role="alert" class="alert">{{i}}....!</strong>
+                          {% endfor %}
+                          </div>
+                          <div class="ms-3">
+                            <a href="user_cake_details?id={{cp.id}}"><h5>{{cp.cake}}</h5></a>
+                            <p class="small mb-0"></p>
+                            {{cp.cake.date|date:"F j, Y" }}
+                            <h5 class="fw-normal mb-0">Quantity : {{ cp.quantity}}</h5>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center">
+                          
+                         
+                          <div style="width: 80px;">
+                            <h5 class="mb-0">{{ cp.rate }}</h5>
+
+                            
+
+                            <a href="managecart/{{cp.id}}?action=inc" class="btn btn-muted" style="border:0px solid black;font-size:10px;"> + </a>
+                            <a href="" class="btn btn-muted" style="background: #e2e2e2;"> {{ cp.quantity }}</a>
+                            <a href="managecart/{{cp.id}}?action=dcr" class="btn btn-muted" style="border:0px solid black;font-size:10px;">-</a>
+
+                            <h5 class="mb-0">{{ cp.subtotal }}</h5>
+                          </div>
+
+                          <a href="managecart/{{cp.id}}?action=rmv" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+               
+  
+                </div>
+                <div class="col-lg-5">
+                  <h4 style="font-weight:600;">Total  : <span>&#8377;</span>{{cart.total}}</h4>
+                 
+                  <a class="btn btn-success m-2" href="checkout" style="width:250px;"> Checkout </a>
+                  
+       </div>
+
+     
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- MDB -->
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+></script>

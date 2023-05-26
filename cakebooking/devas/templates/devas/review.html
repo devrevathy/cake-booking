@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feedback</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+    .form-control{
+    width:500px;
+</style>
+<body>
+ <center>
+<h2>FEEDBACK</h2>
+
+
+    <form role="form1" name="form1" action="{% url 'feedback' %}" method="post" autocomplete="off"  >
+        {% csrf_token %}
+        <div class="form-group"   >
+			<label for="subject">Subject</label>
+	        <input class="form-control"  type="text"   id="subject" name="subject" placeholder="Enter the subject"  autocomplete="off" required="required" onkeypress="return allowOnlyLetters(event,this)">
+
+		</div>
+
+	    <div class="form-group">
+			<label for="message">Message</label>
+	        <input class="form-control" type="text"  id="message" name="message" placeholder="Enter message" autocomplete="off">
+        </div>
+        <input type="hidden" name="catid" value="{{up.id}}"><br>
+
+	    <button type="submit"  class="btn btn-info" id="bt" name="bt">Sent</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+	    </table><br><br>
+
+    </form>
+</center>
+
+
+</body>
+</html>
+<script language="Javascript" type="text/javascript">
+
+function allowOnlyLetters(e, t)
+{
+   if (window.event)
+   {
+      var charCode = window.event.keyCode;
+   }
+   else if (e)
+   {
+      var charCode = e.which;
+   }
+   else { return true; }
+   if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+       return true;
+   else
+   {
+      alert("Please enter only alphabets");
+      return false;
+   }
+}
+function isNumberKey(evt, obj) {
+
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            var value = obj.value;
+            var dotcontains = value.indexOf(".") != -1;
+            if (dotcontains)
+                if (charCode == 46) return false;
+            if (charCode == 46) return true;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+ </script>

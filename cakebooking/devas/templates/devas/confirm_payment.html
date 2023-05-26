@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+
+  <!-- Load static files -->
+  {% load static %}
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  <style>
+    .box-element {
+      background-color: #F5F5F5;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .box-element h3 {
+      margin-top: 0;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .service-item {
+      padding: 9px;
+    }
+
+    .service-item img {
+      margin: 10px;
+    }
+
+    .service-item h5 {
+      text-transform: capitalize;
+    }
+
+    .btn-outline-dark {
+      color: #343a40;
+      border-color: #343a40;
+    }
+
+    .btn-outline-dark:hover {
+      color: #fff;
+      background-color: #343a40;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+
+    .btn-success:hover {
+      background-color: #218838;
+      border-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+	<br>
+	<br>
+	<br>
+	<br>
+
+  <section id="services" class="services section-bg">
+    <div class="container">
+      <div class="col-lg-6 mx-auto">
+        <div class="box-element">
+          <br>
+          <hr>
+          <h3>Order Summary</h3>
+          <hr>
+
+          {% for cp in cart.cartproduct_set.all %}
+          <div class="service-item position-relative">
+            <div class="row">
+              <div class="col" style="border-right: 1px solid black;">
+				
+                <img src="{{cp.cake.pic.url}}" class="m-2" height="100px" width="100px">
+				
+              </div>
+              <div class="col">
+                <h5>{{cp.item}}</h5><br>
+                <p><strong>Quantity: {{cp.quantity}}kg</strong></p>
+                <p style="font-size: 15px; font-weight: 600;">Rate: {{cp.rate|floatformat:2}}</p>
+              </div>
+            </div>
+            <hr>
+          </div>
+          {% endfor %}
+
+          <div class="row">
+            <div class="col">
+              <a class="btn btn-outline-dark mt-2" href="mycart">&#x2190; Back to Cart</a>
+            </div>
+            <div class="col">
+              <h4><strong>Total: &#8377; {{cart.total}}</strong></h4>
+              <form method="post" action="checkout_session">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-success" value="Confirm Payment">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
